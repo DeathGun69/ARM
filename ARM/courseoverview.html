@@ -1,0 +1,75 @@
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="stylemenu.css">
+<link rel="stylesheet" type="text/css" href="stylet.css">
+<link rel="stylesheet" type="text/css" href="gf.css">
+<link rel="stylesheet" type="text/css" href="styleq.css">
+
+<div id="back2 back_add1">
+
+    <div class="flex-center11">
+        <div class="login11">
+
+            <body>
+                <div id="info"></div>
+                <table id="Course"></table>
+                <script>
+                    var CourseTable = document.getElementById('Course'), info = document.getElementById('info'), requestURL = 'data.json',
+                        request = new XMLHttpRequest();
+                    request.open('GET', requestURL);
+                    request.onload = function () {
+                        if (request.readyState === 4) {
+                            if (request.status === 200) {
+                                console.log(request.response);
+                                var dataTable = JSON.parse(request.responseText);
+                                getTableInfo(dataTable);
+                            }
+                            else {
+                                console.error(request.statusText);
+                            }
+                        }
+                    };
+                    request.onerror = function (e) {
+                        console.error(request.statusText);
+                    };
+                    request.send();
+                    function getTableInfo(data) {
+                        info.innerHTML = `<h2>Обзор курса: </h2>`;
+                        let headerTr = document.createElement('tr');
+                        headerTr.innerHTML = `<th>Название</th><td></td><th>Университет</th><td></td><th>Количество часов</th>`;
+                        CourseTable.appendChild(headerTr);
+                        // console.log(Array.isArray(data.Course));
+                        data.Course.forEach(function (elem) {
+                            let tr = document.createElement('tr');
+                            tr.innerHTML = `<td>${elem.Name}</td><td></td><td>${elem.University}</td><td></td><td>${elem.NumberHours}`;
+                            Course.appendChild(tr);
+                        });
+                    }
+                    var dataTable = JSON.parse(request.responseText);
+                    let tr = document.createElement('tr');
+                    tr.innerHTML = `<td>${elem.Name}</td><td>${elem.University}</td><td>${elem.NumberHours}`;
+                    Course.appendChild(tr);
+                </script>
+            </body>
+            <div class="group">
+                <div class="but">
+                    <tr>
+                        <th><button class="buttonr"> <a href='course.html'>Закрыть</a> </button></th>
+                    </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

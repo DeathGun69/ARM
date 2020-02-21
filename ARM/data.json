@@ -1,8 +1,17 @@
 {
-    "Course": [{
-            "Name":"A computer Science portal for Geeks",
+    "Course": [
+        {
+            "Name": "A computer Science portal for Geeks",
             "University": "GeeksforGeeks",
             "NumberHours": "144"
-}
-]
+        }, {
+            "Name": "A computer Science",
+            "University": "GeeksforGeeks",
+            "NumberHours": "72"
+        },{
+            "Name": "Programming",
+            "University": "IGU",
+            "NumberHours": "172"
+        }
+    ]
 }
